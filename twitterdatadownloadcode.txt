@@ -1,0 +1,6 @@
+install.packages("twitteR")install.packages("httr")install.packages("taskscheduleR")install.packages("ROAuth")
+library(twitteR)library(httr)library(taskscheduleR) library(ROAuth)
+setwd("C:/Users/PARAL/Desktop/Web and social media analysis/")getwd()#download.file(url="http://curl.haxx.se/ca/cacert.pem",destfile="cacert.pem")
+#OAuth protocol
+api_key <- "s6KN9ekK8YVmFpsWDIQ446Td7"api_secret <- "xKTNnWEyhLgfZZNkjm5jqJxBGMUOG2qR2G6J0I89254nlEcZOf"access_token <- "3306399255-wJCLe2qoZliTcJG5SxiS9vrHltfRUUxwzxWjNBs"access_token_secret <- "hNRFVqx99qXDb1hSi17i4udulMZodhuMSY8JIL2o8r8pb"setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
+att_tweets <- userTimeline("@verizon", n = 1000)tweetsc.df <- twListToDF(att_tweets)dim(tweetsc.df)View(tweetsc.df)verizon<-write.csv("Verizon.csv")
